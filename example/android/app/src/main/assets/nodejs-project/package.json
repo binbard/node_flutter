@@ -1,0 +1,8 @@
+{
+    "name": "nodejs-project",
+    "version": "0.0.1",
+    "description": "Sample ommunication between Flutter and Node.js",
+    "main": "main.js",
+    "author": "binbard",
+    "license": ""
+  }

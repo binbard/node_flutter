@@ -1,3 +1,8 @@
+## 0.0.3
+
+* Support for ABIs "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+
+
 ## 0.0.2
 
 * Added documentation to code

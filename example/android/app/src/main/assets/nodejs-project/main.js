@@ -1,7 +1,9 @@
 const bridge = require('flutter-bridge');
 
-console.log("Node.js started");
+// Send message to Flutter when Node.js started
 bridge.send("_NODE_", "STARTED");
+
+console.log("Node.js started");
 
 function executeAndCapture(code) {
   let output = "";
@@ -27,7 +29,7 @@ function executeAndCapture(code) {
   return output.trim();
 }
 
-bridge.on("eval", (code) => {
+bridge.on("eval", (code) => {                         // Listen to tag eval and send execution result back to Flutter
   console.log(`Received eval code: ${code}`);
   try {
     const result = executeAndCapture(code);
@@ -39,7 +41,7 @@ bridge.on("eval", (code) => {
   }
 });
 
-bridge.on('ping', (message) => {
+bridge.on('ping', (message) => {                      // Listen to messages with tag ping sent from Flutter
   console.log(`GOT PING: ${message}`);
   bridge.send("pong", "Hello Flutter!")
 });
@@ -49,7 +51,7 @@ bridge.on('msg', (message) => {
   bridge.send("reply", "Hello " + message)
 });
 
-bridge.on('_EVENTS_', (data) => {
+bridge.on('_EVENTS_', (data) => {                     // This Capture any type of message sent from Flutter
   if (typeof data === 'object' && data !== null) {
     data = JSON.stringify(data);
   }

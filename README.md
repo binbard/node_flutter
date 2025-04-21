@@ -105,12 +105,12 @@ const bridge = require('flutter-bridge');
 console.log("Node.js started");
 bridge.send("node", "STARTED");
 
-bridge.on('ping', (message) => {
+bridge.on('ping', (message) => {                  // Listen to messages with tag ping sent from Flutter
   console.log(`GOT PING: ${message}`);
   bridge.send("pong", "Hello Flutter!")
 });
 
-bridge.on('_EVENTS_', (data) => {
+bridge.on('_EVENTS_', (data) => {                 // This Capture any type of message sent from Flutter
   if (typeof data === 'object' && data !== null) {
     data = JSON.stringify(data);
   }

@@ -3,6 +3,11 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:node_flutter/node_flutter_platform_interface.dart';
 
+/// The MethodChannel implementation of the NodeFlutterPlatform interface.
+///
+/// This class provides methods to start Node.js with a script or project,
+/// send messages, and retrieve platform-specific information.
+/// It uses MethodChannel and EventChannel to communicate with the native platform.
 class MethodChannelNodeFlutter extends NodeFlutterPlatform {
   final MethodChannel _methodChannel = const MethodChannel(
     'flutter_nodejs_mobile',

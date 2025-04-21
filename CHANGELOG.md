@@ -1,3 +1,9 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Full support for Android API Level [21-35]
+* Start Node.js as a Persistent Node.js service
+* Start Node.js by file name 
+* Start Node.js by script content
+* Reliable Communication between Flutter and Node.js
+* Foreground service support — your server never dies!
+* Structured messaging with tags

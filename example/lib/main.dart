@@ -17,7 +17,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
   String _abiName = 'Unknown';
-  String _nodeProjectPath = 'Unknown';
   String _nodeStatus = 'OFF';
   bool _nodeStarted = false;
   String _currentStatus = 'IDLE';
@@ -89,14 +88,12 @@ class _MyAppState extends State<MyApp> {
       final platformVersion =
           await Nodejs.getPlatformVersion() ?? 'Unknown platform version';
       final abiName = 'Unknown ABI';
-      final projectPath = await Nodejs.getNodeJsProjectPath() ?? 'Unknown path';
 
       if (!mounted) return;
 
       setState(() {
         _platformVersion = platformVersion;
         _abiName = abiName;
-        _nodeProjectPath = projectPath;
       });
     } on PlatformException {
       setState(() {

@@ -2,6 +2,10 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:node_flutter/node_flutter_platform_interface.dart';
+import 'package:logger/logger.dart';
+
+/// The logger instance for logging messages.
+final Logger logger = Logger();
 
 /// The MethodChannel implementation of the NodeFlutterPlatform interface.
 ///
@@ -65,7 +69,7 @@ class MethodChannelNodeFlutter extends NodeFlutterPlatform {
         'message': jsonEncode(data),
       });
     } on PlatformException catch (e) {
-      print("Failed to send message: '${e.message}'.");
+      logger.e('Failed to send message: ${e.message}');
     }
   }
 
@@ -85,7 +89,7 @@ class MethodChannelNodeFlutter extends NodeFlutterPlatform {
       );
       return abiName;
     } on PlatformException catch (e) {
-      print("Failed to get current ABI name: '${e.message}'.");
+      logger.e("Failed to get current ABI name: '${e.message}'.");
       return null;
     }
   }
@@ -98,7 +102,7 @@ class MethodChannelNodeFlutter extends NodeFlutterPlatform {
       );
       return projectPath;
     } on PlatformException catch (e) {
-      print("Failed to get Node.js project path: '${e.message}'.");
+      logger.e("Failed to get Node.js project path: '${e.message}'.");
       return null;
     }
   }
@@ -111,7 +115,7 @@ class MethodChannelNodeFlutter extends NodeFlutterPlatform {
       );
       return version;
     } on PlatformException catch (e) {
-      print("Failed to get platform version: '${e.message}'.");
+      logger.e("Failed to get platform version: '${e.message}'.");
       return null;
     }
   }

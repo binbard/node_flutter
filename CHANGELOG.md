@@ -1,3 +1,9 @@
+## 0.0.2
+
+* Added documentation to code
+* Moved to logger
+
+
 ## 0.0.1
 
 * Full support for Android API Level [21-35]

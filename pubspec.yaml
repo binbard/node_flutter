@@ -1,6 +1,6 @@
 name: node_flutter
 description: "Run a full Node.js runtime inside Flutter — with a powerful communication bridge between Dart and Node.js."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/binbard/node_flutter
 
 environment:

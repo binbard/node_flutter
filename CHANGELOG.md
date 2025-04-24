@@ -1,3 +1,8 @@
+## 0.0.4
+
+* Bug fixes for class not included in release build
+
+
 ## 0.0.3
 
 * Support for ABIs "armeabi-v7a", "x86", "arm64-v8a", "x86_64"

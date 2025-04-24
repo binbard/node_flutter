@@ -297,7 +297,7 @@ class _MyAppState extends State<MyApp> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: _execNodeWithScript,
-                child: const Text('Start Node.js with Script'),
+                child: const Text('Execute Script'),
               ),
             ),
           ],

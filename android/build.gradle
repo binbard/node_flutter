@@ -55,7 +55,7 @@ android {
 
         // Add NDK configuration
         ndk {
-            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86_64"
         }
         
         externalNativeBuild {
@@ -64,6 +64,8 @@ android {
                 arguments "-DANDROID_STL=c++_shared"
             }
         }
+
+        consumerProguardFiles 'proguard-rules.pro'
     }
 
     externalNativeBuild {
